@@ -12,18 +12,22 @@ const UserForm = (props) => {
 
 const handleSubmit = (e) => {
         e.preventDefault();
-        if (firstName < [2]){
+        if (firstName < 2){
             alert("First name must be at least 2 characters long");
             return;
         }
-        if (lastName < [2]){
+        if (lastName < 2){
             alert("Last name must be at least 2 characters long");
             return;
         }
-        if (email < [5]){
+        if (email < 5){
             alert("Email must be at least 5 characters long");
             return;
-        }        
+        }
+        if (password < 8){
+            alert("Password must be at least 8 characters long");
+            return;
+        }
         if (password!== confirmPassword) {
             alert("Passwords do not match");
         } else {
@@ -46,7 +50,6 @@ const handleSubmit = (e) => {
                 ) : (
                     <h3>Welcome, please submit the form.</h3>
                 )}
-                {/* <h3>{formMessage()}</h3> */}
                 <div>
                     <label>First Name: </label>
                     <input
